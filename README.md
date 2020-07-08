@@ -5,17 +5,6 @@ With the cloud storage explorer, you can seamlessly view and manage your files i
 
 Cloud Storage Gateway
 To connect and manage the cloud storage, we implement a cloud provider class for different cloud providers with below interface, we have implemented all these functionalities for Amazon S3 and Azure Storage with the .NET SDK, you can add more cloud provider code to here.
-public abstract class CloudProvider : IDisposable 
-{
-        public abstract bool GetDirFileList();
-        public abstract bool AsyncDeleteFile();
-        public abstract bool AsyncDownload();
-        public abstract bool AsyncUpload();
-        public abstract bool AsyncMakeDir();
-        public abstract bool AsyncRenameFile();
-        public abstract bool AsyncDownloadDirectoryList();
-        public abstract bool IsDirectoryExist(string directoryName);
-}
 
 The Cloud storage tiering was implemented with tiered storage file system filter driver. A file system filter driver intercepts requests targeted at a file system or another file system filter driver. By intercepting the request before it reaches its intended target, the filter driver can extend or replace functionality provided by the original target of the request. 
 
